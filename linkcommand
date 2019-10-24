@@ -1,0 +1,65 @@
+Link command
+
+ SOFT-LINK
+
+  311 cd /mnt
+  312  mkdir samrat sam
+  313  ll
+  314  cd sam
+  315  vim file.txt
+  316  ll
+  317  cd
+  330  ln -s /mnt/sam/file.txt /mnt/samrat
+  331  cd /mnt/samrat
+  332  ll
+
+  Now Delete the soft link
+
+  334  cd
+  335  rm -r file.txt 
+  336  rm -r /mnt/sam/file.txt
+  337  cd /mnt/sam
+  338  ll
+  339  cd
+  340  cd /mnt/samrat
+  341  ll
+
+  Link file will also delete if we delete main file
+
+  343  cd /mnt/sam
+  344  vim file.txt
+  345  ll
+  346  ln -s /mnt/sam/file.txt /mnt/samrat
+  347  cd /mnt/samrat
+  348  ll
+  349  cd /mnt/sam
+  350  ll
+  351  cd /mnt/samrat
+  352  ll
+  353  rm -r file.txt
+  354  ll
+  355  cd 
+  356  cd /mnt/sam
+  357  ll
+  358  cat file.txt
+ 
+  Main file will not be deleted if we delete link file
+
+
+HARD-LINK
+
+  362  vim file.txt
+  363  ln /mnt/sam/file.txt /mnt/samrat
+  364  ll
+  365  cd /mnt/samrat
+  366  ll
+  367  echo "editing hardlink" >> file.txt
+  368  ll
+  369  cat file.ttx
+  370  cat file.txt
+  371  cd
+  372  cd /mnt/sam
+  373  cat file.txt
+
+ If we edit in hardlink it will affect main file tooo but in soft link if we edit, it will not affect the main file. If we delete main file than there will be no effect in hard link.
+
