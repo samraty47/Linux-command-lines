@@ -1,0 +1,90 @@
+File Permission
+
+Read 			– 4
+Write 			– 2
+Execute 		– 1
+No permission 		- 0
+
+
+  This is root user so i am not using sudo command.
+
+  Change permission of file
+
+
+  245  ls -l
+  246  chmode 761 abc.txt
+  247  chmod 761 abc.txt
+  248  ls -l
+  249  chmod 764 abc.txt
+  250  ls -l 
+
+
+
+
+  Change permission of directory
+
+
+  253  chmod 765 dir1
+  254  ls -l
+
+
+Changing Ownership and Group
+
+If you don’t have user. First create user 
+
+  259  useradd sam
+  282  ls -l 
+
+
+Changing ownership.
+
+  288  ls -l 
+  289  chown sam abc.txt
+  290  ls -l
+
+
+  Changing ownership of directory
+
+
+  292  chown sam dir1
+  293  ls -l 
+
+
+  Changing user and group ownership of file
+
+  295  chown root:root abc.txt
+  296  ls -l 
+
+
+  Changing group owner only
+
+
+  298  chgrp sam abc.txt
+  299  ls -l 
+  300  chgrp sam dir1
+  301  ls -l
+
+
+
+
+
+Tip
+
+
+The file /etc/group contains all the groups defined in the system
+
+You can use the command "groups" to find all the groups you are a member of
+
+You can use the command “newgrp” to work as a member a group other than your default group
+		newgrp Nepal
+		cat > test
+			This is test of creating new group.
+		^ c
+		ls -dl test 
+
+You cannot have 2 groups owning the same file.
+
+You do not have nested groups in Linux. One group cannot be sub-group of other
+
+x- eXecuting a directory means Being allowed to "enter" a dir and gain possible access to sub-dirs
+
