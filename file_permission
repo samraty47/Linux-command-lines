@@ -32,7 +32,7 @@ Changing Ownership and Group
 
 If you don’t have user. First create user 
 
-  259  useradd sam
+  259  adduser/useradd sam
   282  ls -l 
 
 
